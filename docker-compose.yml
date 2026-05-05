@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dams-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dams_service_db
+      POSTGRES_USER: dams_user
+      POSTGRES_PASSWORD: dams_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - dams_postgre_data:/var/lib/postgresql/data
+
+
+volumes:
+  dams_postgres_data:
