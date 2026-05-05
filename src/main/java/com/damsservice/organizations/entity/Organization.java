@@ -24,7 +24,9 @@ public class Organization {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updated_at;
 
-    public Organization() {
+    public Organization(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     @PrePersist
